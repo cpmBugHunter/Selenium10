@@ -1,0 +1,19 @@
+group 'ru.selenium10'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:6.11'
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.4.0'
+    testCompile 'org.hamcrest:java-hamcrest:2.0.0.0'
+    testCompile 'com.beust:jcommander:1.72'
+    testCompile 'ch.qos.logback:logback-classic:1.2.2'
+}

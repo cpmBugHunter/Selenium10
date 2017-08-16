@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bugHunter.iml" filepath="$PROJECT_DIR$/.idea/modules/bugHunter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bugHunter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bugHunter_main.iml" group="bugHunter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bugHunter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bugHunter_test.iml" group="bugHunter" />
+    </modules>
+  </component>
+</project>
