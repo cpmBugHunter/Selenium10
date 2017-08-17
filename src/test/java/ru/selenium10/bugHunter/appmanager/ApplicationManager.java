@@ -46,7 +46,7 @@ public class ApplicationManager {
         wd.get(properties.getProperty("web.baseUrl"));
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
-        sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
+        //sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
     }
 
     public void stop() {
