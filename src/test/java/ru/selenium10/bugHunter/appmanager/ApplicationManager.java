@@ -43,10 +43,8 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
         wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wd.get(properties.getProperty("web.baseUrl"));
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
-        //sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
     }
 
     public void stop() {
@@ -55,5 +53,9 @@ public class ApplicationManager {
 
     public NavigationHelper goTo() {
         return navigationHelper;
+    }
+
+    public SessionHelper session() {
+        return sessionHelper;
     }
 }

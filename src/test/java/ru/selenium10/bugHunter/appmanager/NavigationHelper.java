@@ -3,6 +3,8 @@ package ru.selenium10.bugHunter.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 public class NavigationHelper extends HelperBase{
 
     public NavigationHelper(WebDriver wd) {
@@ -17,7 +19,8 @@ public class NavigationHelper extends HelperBase{
         }
     }
 
-    public void url(String uri){
-
+    public void page(String urlPart) throws IOException {
+        String baseUrl = extract("src/test/resources/local.properties", "web.baseUrl");
+        wd.get(String.format("%s%s", baseUrl, urlPart));
     }
 }

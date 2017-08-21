@@ -4,12 +4,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
+import java.io.*;
+import java.util.Properties;
+
 public class HelperBase {
 
     protected WebDriver wd;
+    protected Properties properties;
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
+        properties = new Properties();
+    }
+
+    public String extract (String propFilePath, String propName) throws IOException {
+        try (FileReader fr = new FileReader(new File (propFilePath)))
+        {
+            properties.load(fr);
+        }
+        return properties.getProperty(propName);
     }
 
     public void click(By locator) {
@@ -27,7 +40,7 @@ public class HelperBase {
         }
     }
 
-    protected boolean isElementPresent(By locator) {
+    public boolean isElementPresent(By locator) {
         try {
             wd.findElement(locator);
             return true;
