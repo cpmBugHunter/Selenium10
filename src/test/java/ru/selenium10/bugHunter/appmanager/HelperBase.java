@@ -1,6 +1,7 @@
 package ru.selenium10.bugHunter.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
@@ -44,8 +45,14 @@ public class HelperBase {
         try {
             wd.findElement(locator);
             return true;
+        } catch (InvalidSelectorException ex) {
+            throw ex;
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+
+    public boolean areElementsPresent(By locator) {
+        return wd.findElements(locator).size() > 0;
     }
 }
