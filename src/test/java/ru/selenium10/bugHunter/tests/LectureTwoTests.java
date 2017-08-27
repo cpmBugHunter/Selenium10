@@ -9,7 +9,7 @@ public class LectureTwoTests extends TestBase {
     @Test
     public void testLoginAsAdmin_CorrectData_Success() throws IOException {
         appMngr.goTo().page("/admin");
-        appMngr.session().logout();
-        appMngr.session().login("admin", "admin");
+        appMngr.admin().logout();
+        appMngr.admin().login("admin", "admin");
     }
 }

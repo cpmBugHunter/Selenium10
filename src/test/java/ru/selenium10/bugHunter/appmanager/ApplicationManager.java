@@ -19,6 +19,8 @@ public class ApplicationManager {
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
     private String browser;
+    private AdminHelper addminHelper;
+    private ShopHelper shopHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -49,6 +51,14 @@ public class ApplicationManager {
 
     public void stop() {
         wd.quit();
+    }
+    
+    public AdminHelper admin() {
+        return addminHelper;
+    }
+    
+    public ShopHelper shop() {
+        return shopHelper;
     }
 
     public NavigationHelper goTo() {
